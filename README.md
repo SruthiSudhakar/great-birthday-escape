@@ -1,6 +1,6 @@
 # The Great Birthday Escape
 
-A personalised, browser-based birthday escape room. The birthday person goes through four rooms from his life, solves puzzles about his own past, collects four digits, opens the Birthday Vault, and finds a letter from his family.
+A personalised, browser-based birthday escape room. The birthday person goes through three rooms from his life (childhood, school & college, family), solves puzzles about his own past, collects three digits, opens the Birthday Vault, and finds a letter from his family.
 
 There's nothing to install: no accounts, no server, no build step.
 
@@ -128,10 +128,10 @@ The ending's photo collage is the `ending.photos` list. Add or remove as many as
 At the top of `data.js`:
 
 ```js
-finalCode: ["7", "1", "9", "4"],
+finalCode: ["7", "1", "9"],
 ```
 
-Room 1 awards the first digit, Room 2 the second, and so on. A meaningful number works well: a birth year, a house number, a date.
+There is one digit per room: Room 1 awards the first digit, Room 2 the second, and so on. If you add or remove a room, add or remove a digit to match. A meaningful number works well: part of a birth year, a house number, a date.
 
 ---
 

@@ -1,6 +1,6 @@
 # Birthday Escape Room: Family Questionnaire
 
-We're building a little online escape-room game for his birthday. He'll travel through four "rooms" from his life (childhood, school/college, family, and a secret archive), answering questions and uncovering stories.
+We're building a little online escape-room game for his birthday. He'll travel through three "rooms" from his life (childhood, school/college, family), answering questions and uncovering stories.
 
 **Please answer whatever you can.** Short answers are perfect. Funny, specific details are gold. For multiple-choice questions we also need 3 *wrong but believable* answers. If you can think of some, add them!
 
@@ -192,4 +192,4 @@ Ask 3–10 people for:
 
 ## The Vault Code
 
-A 4-digit number that means something (birth year, old house number, a date):
+A 3-digit number that means something (part of a birth year, an old house number, a date):

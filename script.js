@@ -6,6 +6,8 @@
   const D = window.BIRTHDAY_DATA;
   const STORE_KEY = "great-birthday-escape-v1";
   const ROOMS = D.rooms;
+  // One code digit per room; extra digits in data.js are ignored.
+  const CODE = D.finalCode.slice(0, ROOMS.length);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -372,7 +374,7 @@
       <span class="mark" aria-hidden="true">${vaultUnlocked() ? "🔓" : "🔒"}</span><span class="name">Vault</span></button>`;
     $("#hud-rooms").innerHTML = rooms + vaultBtn;
 
-    $("#hud-keys").innerHTML = `<span class="hud-label">Keys</span>` + D.finalCode.map((d, i) =>
+    $("#hud-keys").innerHTML = `<span class="hud-label">Keys</span>` + CODE.map((d, i) =>
       `<span class="key-slot ${i < state.keys ? "got" : ""}" aria-label="${i < state.keys ? "Key " + (i + 1) + ": " + esc(d) : "Key " + (i + 1) + ": not found"}">${i < state.keys ? esc(d) : "?"}</span>`
     ).join("");
   }
@@ -499,7 +501,7 @@
         <footer class="room-foot">
           <div class="casenote">
             <span class="casenote-count"><strong>${solved}</strong> / ${total} investigated</span>
-            <span class="casenote-tip">${done ? `Key recovered: <strong>${esc(D.finalCode[i])}</strong>` : "Click the glowing objects. Solve them all to recover this room's key."}</span>
+            <span class="casenote-tip">${done ? `Key recovered: <strong>${esc(CODE[i])}</strong>` : "Click the glowing objects. Solve them all to recover this room's key."}</span>
           </div>
           <div class="room-nav">
             ${i > 0 ? `<button class="btn btn-ghost" type="button" data-nav="${i - 1}">← ${esc(shortName(ROOMS[i - 1]))}</button>` : ""}
@@ -913,7 +915,7 @@
         <div class="key-art">${KEY_SVG}</div>
         <p class="eyebrow">${esc(room.title)} · solved</p>
         <h2 id="modal-title">${t(room.clueLabel || "Clue recovered")}:</h2>
-        <div class="big-digit" aria-label="Digit ${esc(D.finalCode[i])}">${esc(D.finalCode[i])}</div>
+        <div class="big-digit" aria-label="Digit ${esc(CODE[i])}">${esc(CODE[i])}</div>
         <p class="key-note">${last ? "<strong>The Birthday Vault is now accessible.</strong>" : "Remember it. You'll need it."}</p>
         <button class="btn btn-primary btn-big" type="button" id="key-next">${last ? "Approach the vault →" : `Onward to Room ${i + 2} →`}</button>
         <button class="btn btn-link" type="button" id="key-stay">Stay and look around</button>
@@ -931,7 +933,7 @@
      VAULT
      ------------------------------------------------------------------ */
   function renderVault() {
-    const len = D.finalCode.length;
+    const len = CODE.length;
     let digits = Array(len).fill(0);
 
     stage.innerHTML = `
@@ -962,7 +964,7 @@
         </div>
         <div class="vault-msg" id="vault-msg" aria-live="assertive"></div>
         <div class="vault-notes">
-          ${D.finalCode.map((d, i) => `<span class="sticky" style="--r:${[-4, 3, -2, 5][i % 4]}deg">Key ${i + 1}<b>${i < state.keys ? esc(d) : "?"}</b></span>`).join("")}
+          ${CODE.map((d, i) => `<span class="sticky" style="--r:${[-4, 3, -2, 5][i % 4]}deg">Key ${i + 1}<b>${i < state.keys ? esc(d) : "?"}</b></span>`).join("")}
         </div>
       </section>`;
 
@@ -999,7 +1001,7 @@
       const code = digits.join("");
       const door = $("#vault-door");
       const msg = $("#vault-msg");
-      if (code === D.finalCode.join("")) {
+      if (code === CODE.join("")) {
         sfx.vault();
         msg.innerHTML = `<p class="granted">ACCESS GRANTED</p>`;
         door.classList.add("unlocking");

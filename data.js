@@ -22,16 +22,16 @@ window.BIRTHDAY_DATA = {
   name: "Ganesh",
   age: 37,
 
-  // The four digits of the vault code — one is earned per room, in order.
-  finalCode: ["7", "1", "9", "4"],
+  // The vault code — one digit is earned per room, in order (one digit per room).
+  finalCode: ["7", "1", "9"],
 
   intro: {
     title: "The Great Birthday Escape",
-    subtitle: "4 rooms. 1 missing birthday cake.",
+    subtitle: "3 rooms. 1 missing birthday cake.",
     lines: [
       "{name}! Someone has locked away your birthday cake!",
       "There is only one way to get it back.",
-      "Travel through the rooms, recover four keys, and prove that your remember bits of yours and your family's lives! ",
+      "Travel through the rooms, recover three keys, and prove that your remember bits of yours and your family's lives! ",
       "Your family has supplied the evidence.",
       "Some of it is incriminating.",
       "Good luck."
@@ -285,91 +285,6 @@ window.BIRTHDAY_DATA = {
             answer: 0,
             hint: "[HINT]",
             caption: "[YEAR] — [STORY BEHIND THIS PHOTO]."
-          }
-        }
-      ]
-    },
-
-    /* ------------------------------------------------------------------
-       ROOM 4 — CLASSIFIED FAMILY ARCHIVES
-       ------------------------------------------------------------------ */
-    {
-      id: "archives",
-      title: "Classified Family Archives",
-      subtitle: "Room 4 · access restricted",
-      theme: "archives",
-      intro: "The evidence room. Decades of files. Some redacted for your protection. Some for ours.",
-      clueLabel: "Fourth clue recovered",
-      objects: [
-        {
-          id: "who-said-this",
-          label: "Interview transcript",
-          icon: "folder",
-          x: 8, y: 50,
-          puzzle: {
-            type: "multiple-choice",
-            eyebrow: "Exhibit A · who said this?",
-            question: "\"[QUOTE ABOUT {name}]\"",
-            options: ["Mom", "[SIBLING]", "[COUSIN]", "[FRIEND]"],
-            answer: 0,
-            hint: "[HINT]",
-            successText: "Correct. Context: [WHEN AND WHY IT WAS SAID]."
-          }
-        },
-        {
-          id: "redacted-file",
-          label: "Redacted file",
-          icon: "redacted",
-          x: 30, y: 62,
-          puzzle: {
-            type: "two-truths-one-lie",
-            eyebrow: "Exhibit B · two truths and a lie",
-            question: "Which of these NEVER happened to {name}?",
-            statements: [
-              "[TRUE STORY 1]",
-              "[TRUE STORY 2]",
-              "[FAKE STORY]"
-            ],
-            lieIndex: 2,
-            hint: "[HINT]",
-            successText: "Correct — that one is pure fiction. The other two? Fully documented."
-          }
-        },
-        {
-          id: "photo-evidence",
-          label: "Undeveloped photo",
-          icon: "polaroid",
-          x: 56, y: 58,
-          puzzle: {
-            type: "photo-memory",
-            eyebrow: "Exhibit C · photographic evidence",
-            question: "What was happening in this photo?",
-            image: "assets/images/placeholder-archive.svg",
-            imageAlt: "[DESCRIBE THE ARCHIVE PHOTO]",
-            options: ["[GUESS A]", "[GUESS B]", "[GUESS C]", "[GUESS D]"],
-            answer: 3,
-            hint: "[HINT]",
-            caption: "[YEAR] — [THE FULL STORY]."
-          }
-        },
-        {
-          id: "most-likely-to",
-          label: "Evidence board",
-          icon: "board",
-          x: 66, y: 8,
-          puzzle: {
-            type: "multiple-choice",
-            eyebrow: "Exhibit D · family verdict",
-            question: "What does the family think {name} is most likely to do?",
-            options: [
-              "[MOST LIKELY TO A]",
-              "[MOST LIKELY TO B]",
-              "[MOST LIKELY TO C]",
-              "[MOST LIKELY TO D]"
-            ],
-            // acceptAny: every answer counts — this one is about opinions, not facts.
-            acceptAny: true,
-            successText: "The family has reviewed your answer and finds it… entirely plausible."
           }
         }
       ]
