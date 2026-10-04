@@ -19,7 +19,7 @@
    ===================================================================== */
 
 window.BIRTHDAY_DATA = {
-  name: "[NAME]",
+  name: "Ganesh",
   age: 37,
 
   // The four digits of the vault code — one is earned per room, in order.
