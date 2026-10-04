@@ -31,7 +31,7 @@ window.BIRTHDAY_DATA = {
     lines: [
       "{name}! Someone has locked away your birthday cake!",
       "There is only one way to get it back.",
-      "Travel through your own past, recover four keys, and prove that you actually remember the last {age} years.",
+      "Travel through the rooms, recover four keys, and prove that your remember bits of yours and your family's lives! ",
       "Your family has supplied the evidence.",
       "Some of it is incriminating.",
       "Good luck."
