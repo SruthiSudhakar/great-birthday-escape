@@ -27,7 +27,7 @@ window.BIRTHDAY_DATA = {
 
   intro: {
     title: "The Great Birthday Escape",
-    subtitle: "{age} years. 4 rooms. 1 missing birthday cake.",
+    subtitle: "4 rooms. 1 missing birthday cake.",
     lines: [
       "{name}! Someone has locked away your birthday cake!",
       "There is only one way to get it back.",
