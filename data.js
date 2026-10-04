@@ -29,8 +29,7 @@ window.BIRTHDAY_DATA = {
     title: "The Great Birthday Escape",
     subtitle: "{age} years. 4 rooms. 1 missing birthday cake.",
     lines: [
-      "{name}, something has gone terribly wrong.",
-      "Someone has locked away your birthday cake.",
+      "{name}! Someone has locked away your birthday cake!",
       "There is only one way to get it back.",
       "Travel through your own past, recover four keys, and prove that you actually remember the last {age} years.",
       "Your family has supplied the evidence.",
