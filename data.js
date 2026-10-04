@@ -20,14 +20,14 @@
 
 window.BIRTHDAY_DATA = {
   name: "[NAME]",
-  age: 40,
+  age: 37,
 
   // The four digits of the vault code — one is earned per room, in order.
   finalCode: ["7", "1", "9", "4"],
 
   intro: {
     title: "The Great Birthday Escape",
-    subtitle: "40 years. 4 rooms. 1 missing birthday cake.",
+    subtitle: "{age} years. 4 rooms. 1 missing birthday cake.",
     lines: [
       "{name}, something has gone terribly wrong.",
       "Someone has locked away your birthday cake.",
