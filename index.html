@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Great Birthday Escape</title>
+  <meta name="description" content="A personalised birthday escape room.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,500&family=Special+Elite&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗝️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#stage">Skip to game</a>
+
+  <header class="hud" id="hud" hidden>
+    <div class="hud-title">The Great Birthday Escape</div>
+    <nav class="hud-rooms" id="hud-rooms" aria-label="Rooms"></nav>
+    <div class="hud-keys" id="hud-keys" aria-label="Keys collected"></div>
+    <div class="hud-actions">
+      <button class="icon-btn" id="sound-toggle" type="button" aria-pressed="true" aria-label="Sound on">
+        <span aria-hidden="true">🔊</span>
+      </button>
+      <button class="icon-btn" id="restart-btn" type="button" aria-label="Restart the game">
+        <span aria-hidden="true">↺</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="stage" class="stage" tabindex="-1"></main>
+
+  <!-- Puzzle / dialog modal -->
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" id="modal-close" aria-label="Close">×</button>
+      <div class="modal-inner" id="modal-inner"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
